@@ -1,0 +1,22 @@
+<div ng-controller='MainController as main'>
+  <a class="btn btn-warning"
+        ng-href="#/chapter">
+    Add Chapter
+  </a>
+
+  <form name="form" ng-submit="main.CreateChapter()">
+    <input type="text" id="name" ng-model="main.chapter.name">
+    <input type="number" id="number" ng-model="main.chapter.number">
+    <input type="submit" value="Submit">
+  </form>
+ {{main.chapter}}
+  <div class="row">
+    <div class="col-sm-4 well" ng-repeat="chapter in main.chapters">
+      <div class="row">
+        <strong> Chapter Name</strong> {{chapter.name}}
+         {{chapter.number}}
+      </div>
+    </div>
+  </div>
+</div>
+
